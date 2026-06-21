@@ -2,6 +2,10 @@ body{
    font-family: "plus jakarta Sans",sans-serif !important;
 }
 
+.container{
+    flex: 1;
+}
+
 .navbar{
     height: 5rem;
     background-color: white;
@@ -79,3 +83,26 @@ body{
     background-color: white;
 }
 
+.show-img{
+    height: 30vh;
+     
+}
+
+.add-btn{
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+.show-image{
+   height: 30vh; 
+}
+
+.btns{
+    display: flex !important;
+
+}
+
+.show-card{
+    padding-left: 0;
+    padding-right: 0;
+}

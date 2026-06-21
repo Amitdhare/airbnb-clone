@@ -1,55 +1,38 @@
-<% layout("/layouts/boilerPlate") %>
+<% layout("/layouts/boilerPlate")%>
 
-<body>
-    <div class="container mt-5">
-        
-        <!-- Card -->
-        <div class="card shadow-lg border-0 rounded-4">
-            
-            <!-- Card Header -->
-            <div class="card-header bg-dark text-white rounded-top-4">
-                <h2 class="mb-0"><%= listing.title %></h2>
+    <body>
+        <div class="row">
+            <div class="col-8 offset-3">
+                <h1>listing details:</h1>
             </div>
 
-            <!-- Card Body -->
-            <div class="card-body p-4">
+            <div class="card col-6 offset-3">
+                <img src="<%= listing.image.url %>" class="card-img-top show-image" alt="...">
+                <div class="card-body">
+                    <p class="card-text">
+                        <b>
+                            <%=listing.title %>
+                        </b> <br>
+                        <%= listing.description %> <br>
+                            &#x20B9;<%= listing.price.toLocaleString("en-IN") %><br>
+                                <%=listing.location %><br>
+                                    <%= listing.country %>
 
-                <p class="card-text fs-5 text-muted">
-                    <%= listing.description %>
-                </p>
-
-                <h4 class="text-success mb-3">
-                    &#x20B9;<%= listing.price.toLocaleString("en-IN") %>
-                </h4>
-
-                <p class="mb-1">
-                    <strong>Location:</strong> <%= listing.location %>
-                </p>
-
-                <p>
-                    <strong>Country:</strong> <%= listing.country %>
-                </p>
-
-                <!-- Buttons -->
-                <div class="d-flex gap-3 mt-4">
-
-                    <!-- Edit Button -->
-                    <a href="/listings/<%= listing._id %>/edit" 
-                       class="btn btn-warning px-4">
-                        Edit
-                    </a>
-
-                    <!-- Delete Form -->
-                    <form action="/listings/<%= listing._id %>?_method=delete" 
-                          method="post">
-                        <button class="btn btn-danger px-4">
-                            Delete
-                        </button>
-                    </form>
-
+                    </p>
+                    </h5>
                 </div>
-
             </div>
+
+
+
+
         </div>
-    </div>
-</body>
+        <div class="btns"><a href="/listings/<%= listing._id %>/edit" class="btn add-btn col-1 offset-3"> Edit </a>
+            <form action="/listings/<%= listing._id %>?_method=delete" method="post">
+                <button class="btn btn-dark offset-5">Delete</button>
+            </form>
+        </div>
+
+
+
+    </body>
